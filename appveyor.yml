@@ -1,0 +1,12 @@
+before_build:
+  - nuget restore src\SafePlanet.sln
+
+configuration: Release  
+  
+build:
+  project: src\SafePlanet.sln
+  
+artifacts:
+  - path: 'src\SafePlanet\bin\$(configuration)'
+    name: SafePlanet
+    type: zip
