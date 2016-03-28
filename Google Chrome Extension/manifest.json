@@ -1,0 +1,15 @@
+{
+  "name": "Secure password from clipboard",
+  "description": "Transforms coded password from the clipboard",
+  "version": "0.2",
+  "permissions": ["contextMenus", "clipboardRead", "clipboardWrite", "activeTab"],
+  "background": {
+    "persistent": false,
+    "scripts": ["code.js"]
+  },
+  "icons" : {
+    "48" : "icon-48x48.png",
+    "128" : "icon-128x128.png"
+  },
+  "manifest_version": 2
+}

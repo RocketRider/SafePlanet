@@ -1,0 +1,14 @@
+﻿<Window x:Class="SafePlanet.OpenDatabase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SafePlanet - Open Database" Height="258" Width="606"
+        FocusManager.FocusedElement="{Binding ElementName=MasterPasswordControl}">
+    <Grid>
+        <DataGrid x:Name="DatabaseViewControl" Margin="10,10,10,44"/>
+        <Button x:Name="ImportSecureKeyControl" Content="Import SecureKey" HorizontalAlignment="Left" Margin="10,0,0,15" VerticalAlignment="Bottom" Width="129" Height="24" Click="ImportSecureKeyControl_Click"/>
+        <Label Content="Master Password&#xD;&#xA;" HorizontalAlignment="Left" Margin="156,0,0,15" VerticalAlignment="Bottom" Height="24"/>
+        <PasswordBox x:Name="MasterPasswordControl" Margin="256,0,90,15" VerticalAlignment="Bottom" Height="24" PasswordChanged="MasterPasswordControl_PasswordChanged"/>
+        <Button x:Name="ButtonLoad" Content="Load" HorizontalAlignment="Right" Margin="0,0,10,15" VerticalAlignment="Bottom" Width="75" Height="24" Click="ButtonLoad_Click" IsDefault="True"/>
+
+    </Grid>
+</Window>

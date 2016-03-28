@@ -1,0 +1,57 @@
+﻿<Window x:Class="SafePlanet.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SafePlanet" Height="626" Width="1122" Closed="Window_Closed" Closing="Window_Closing">
+    
+    <Window.Resources>
+        <Style x:Key="GroupStyleHeader" TargetType="{x:Type GroupItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                        <Expander x:Name="exp" IsExpanded="True" Background="DarkGray">
+                            <Expander.Header>
+                                <TextBlock Text="{Binding Name}" />
+                            </Expander.Header>
+                            <ItemsPresenter />
+                        </Expander>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+    </Window.Resources>
+    
+    <Grid>
+        <Button Content="Add" Height="24" HorizontalAlignment="Left" Name="button1" VerticalAlignment="Top" Width="100" Click="button1_Click" Margin="8,0,0,0" />
+        <Button Content="Delete" Height="24" HorizontalAlignment="Left" Margin="8,28,0,0" Name="button2" VerticalAlignment="Top" Width="100" Click="button2_Click" />
+        <Button Content="Save" Height="24" HorizontalAlignment="Right" Name="button3" VerticalAlignment="Top" Width="94" Click="button3_Click" Margin="0,0,10,0" />
+        <DataGrid AutoGenerateColumns="False" Margin="0,57,0,0" Name="dataGrid1" CellEditEnding="dataGrid1_CellEditEnding" SelectionMode="Single">
+
+            <DataGrid.GroupStyle>
+                <GroupStyle ContainerStyle="{StaticResource GroupStyleHeader}">
+                    <GroupStyle.Panel>
+                        <ItemsPanelTemplate>
+                            <DataGridRowsPresenter />
+                        </ItemsPanelTemplate>
+                    </GroupStyle.Panel>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Username" Binding="{Binding Username}" />
+                <DataGridTextColumn Header="Password" Binding="{Binding Password}" />
+                <DataGridTextColumn Header="URL" Binding="{Binding URL}" />
+                <DataGridTextColumn Header="Group" Binding="{Binding Group}" />
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button Content="Open URL" Height="24" HorizontalAlignment="Left" Margin="134,0,0,0" Name="button4" VerticalAlignment="Top" Width="100" Click="button4_Click" DataContext="{Binding}" />
+        <Button Content="Copy Password" Height="24" HorizontalAlignment="Left" Margin="240,0,0,0" Name="button5" VerticalAlignment="Top" Width="100" Click="button5_Click_1" />
+        <Button Content="Show Password" Height="24" HorizontalAlignment="Left" Margin="134,28,0,0" Name="button6" VerticalAlignment="Top" Width="100" Click="button6_Click" />
+        <Button Content="Generate Pwd" Height="24" Margin="0,0,127,0" x:Name="button7" VerticalAlignment="Top" Click="button7_Click" HorizontalAlignment="Right" Width="100" />
+        <Button Content="Export SecKey" Margin="0,28,10,0" VerticalAlignment="Top" Height="24" HorizontalAlignment="Right" Width="94" Click="Button_Click"/>
+        <Button Content="Copy Secure Pwd" Height="24" HorizontalAlignment="Left" Margin="240,28,0,0" x:Name="button5_Copy" VerticalAlignment="Top" Width="100" Click="button5_Click_2" />
+    </Grid>
+</Window>
+
