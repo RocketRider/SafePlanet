@@ -1,3 +1,4 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/wu6y65j2ua800gel?svg=true)](https://ci.appveyor.com/project/RocketRider/safeplanet)
 # SafePlanet
 A simple but secure passwordsafe
 
